@@ -36,6 +36,34 @@
         
         result.innerHTML="Correct guess: "+correct+"Wrong guess: "+wrong
 }
+
+</script>
+    <div class="container">
+        <img src="Monarch.jpg" height="200" width="200" onclick="newImage()" id="img" alt="image">
+        <script>
+            var usingImage=1
+            function newImage(){
+                out=document.getElementById("img")
+                switch(usingImage){
+                    case 1:
+                        out.src="Monarch.jpg"
+                        usingImage=usingImage+1
+                        break;
+                    case 2:
+                        out.src="Killer Ant.jpg"
+                        usingImage=usingImage+1
+                        break;
+                    case 3:
+                        out.src="Uliodon.jpg"
+                        usingImage=1
+                        break;
+                    default:
+                        out.src="Uliodon.jpg"                
+                }
+                
+            }
+        </script>
+
     </script>
     </body>
     </html>
