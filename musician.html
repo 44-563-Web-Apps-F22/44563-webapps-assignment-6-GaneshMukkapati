@@ -7,38 +7,40 @@
 <body>
 <h1>Musician guess by Ganesh</h1>
 <h2>Getting input</h2>
-<form>
 
-    <label for="form1_age">Enter the secret musician name</label>
-    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="John Lennon"> <br>
-    <label for="form1_nick">Guess the musician </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus > <br>
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+<label for="SecretMusician">Enter the secret musician name </label>
+    <input type ="password" id="SecretMusician" name="SecretMusician" min=10 max=50 step=2 value="John Lennon"> <br>
+
+    <label for="GuessMusician">Guess the musician </label>
+    <input type ="text" id="GuessMusician" name="GuessMusician" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess ">
 </form>
 <p id="result">This text will be replaced </p>
 
 <script> 
     correct=0;
     wrong=0;
-    count=0
+    count=0;
     function checkGuess(){
         console.log("Check the guess")
         secret = document.getElementById("SecretMusician").value
         guess = document.getElementById("GuessMusician").value
-       if(secret==guess){
-        correct=correct+1
-        count=0
-        alert("You got it right")
+        if(secret==guess){
+            correct=correct+1
+            alert("You got it right")
+            count=0
        }
        else{
         if(count<3){
-        wrong+=1
-        count=count+1
-        alert("Wrong Musician")
-       }
-       else {
-
-         alert("Sorry, Game over")
+            wrong+=1
+            count=count+1
+            alert("Wrong Musician")
+        }
+        else{
+            alert("Sorry game over")
+        }
+        
        }
         
         result.innerHTML="Correct guess: "+correct+"Wrong guess: "+wrong
@@ -69,8 +71,9 @@
                 }
                 
             }
-</script>
-    
+        </script>
+
+    </script>
     </body>
     </html>
 
